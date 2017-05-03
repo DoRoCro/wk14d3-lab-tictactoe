@@ -8,7 +8,11 @@ class InfoBox extends React.Component {
   render () {
     let textToShow = ''
     if (this.props.winner) {
-      textToShow = `${this.props.winner} has won the game!  Click to reset`
+      if (this.props.winner === 'D') {
+        textToShow = `Game was Drawn.  Click a square to reset`
+      } else {
+        textToShow = `${this.props.winner} has won the game!  Click on a blank square to reset`
+      }
     } else {
       textToShow = `${this.props.player} turn to play, click on a blank square`
     }

@@ -49,6 +49,8 @@ class TTTContainer extends React.Component {
         // player has won, game over
         this.setState({winner: player})
         // do some win logic / messaging here
+      } else if (this.winChecker.checkDraw(this.state.squares)) {
+        this.setState({winner: 'D'})
       } else {
         // continue game
         if (this.state.player === 'X') {

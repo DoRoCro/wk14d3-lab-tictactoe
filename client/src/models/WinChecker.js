@@ -4,6 +4,13 @@ class WinChecker {
 
   }
 
+  checkDraw (array) {
+    // if all squares played, must be a draw as checkAll is called before checkDraw, but can always check
+    result = array.reduce((acc, cur) => {
+      return acc && cur.played
+    }, true)
+  }
+
   checkAll (array) {
     // console.log(array)
     console.log('checking', this.checkRows(array), this.checkColumns(array), this.checkDiagonals(array))

@@ -4,19 +4,25 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w"
+    "test": "npm run compile && mocha --compilers js:babel-core/register src/models/specs --reporter nyan",
+    "start": "webpack -w",
+    "compile": "babel --presets es2015 -d lib/ src/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.4.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.23.0",
+    "mocha": "^3.3.0",
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }

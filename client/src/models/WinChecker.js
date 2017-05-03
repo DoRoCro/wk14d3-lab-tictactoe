@@ -6,9 +6,10 @@ class WinChecker {
 
   checkDraw (array) {
     // if all squares played, must be a draw as checkAll is called before checkDraw, but can always check
-    result = array.reduce((acc, cur) => {
+    const result = array.reduce((acc, cur) => {
       return acc && cur.played
     }, true)
+    return result
   }
 
   checkAll (array) {
